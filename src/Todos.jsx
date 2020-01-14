@@ -10,13 +10,13 @@ function Todos() {
       <h1>Todos</h1>
       <TodoList
         todos={todos}
-        onComplete={todo => {
+        onItemClick={todo => {
           const _todo = todos[todos.indexOf(todo)];
           _todo.completed = !_todo.completed;
           setTodos([...todos]);
         }}
       />
-      <TodoAdder onAdd={title => setTodos([...todos, {title, completed: false}])} />
+      <TodoAdder onAdd={title => setTodos([...todos, { title }])} />
     </>
   );
 }
