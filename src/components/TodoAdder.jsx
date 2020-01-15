@@ -6,9 +6,9 @@ function TodoAdder({ onAdd }) {
 
   return (
     <form
-      onSubmit={e => {
-        e.stopPropagation();
-        e.preventDefault();
+      onSubmit={event => {
+        event.stopPropagation();
+        event.preventDefault();
         onAdd(input.current.value);
         input.current.value = '';
       }}
