@@ -10,11 +10,10 @@ function Todo({ title, completed, onClick }) {
   }
 
   return (
-    <li>
+    <li style={textStyle}>
       <span
         onClick={onClick}
         onKeyPress={(event) => { if (event.key === 'Enter') { onClick(event); } }}
-        style={textStyle}
         role="button"
         tabIndex="0"
       >

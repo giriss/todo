@@ -10,22 +10,22 @@ describe('TodoList', () => {
     act(() => {
       render(
         <TodoList
-          todos={[{title: 'One'}, {title: 'Two', completed: true}, {title: 'Three'}]}
+          todos={[{ title: 'One' }, { title: 'Two', completed: true }, { title: 'Three' }]}
           onToggle={onToggle}
-        />
-      )
-    })
-  })
+        />,
+      );
+    });
+  });
 
   it('has 3 items', () => {
-    expect(document.querySelectorAll('li')).toHaveLength(3)
-  })
+    expect(document.querySelectorAll('li')).toHaveLength(3);
+  });
 
   it('calls onToggle with the correct value', () => {
     act(() => {
-      document.querySelector('li:nth-child(2)').dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    })
+      document.querySelector('li:nth-child(2) > span').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    });
 
-    expect(onToggle).toHaveBeenNthCalledWith(1, 'Two')
-  })
+    expect(onToggle).toHaveBeenNthCalledWith(1, 'Two');
+  });
 });
