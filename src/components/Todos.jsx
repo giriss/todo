@@ -6,7 +6,11 @@ import TodoAdder from './TodoAdder';
 function Todos({ items, onAdd, onToggle }) {
   return (
     <>
-      <h1>Todos</h1>
+      <h1>
+        {`${items.length} `}
+        Todo
+        {items.length > 1 ? 's' : ''}
+      </h1>
       <TodoList todos={items} onToggle={onToggle} />
       <TodoAdder onAdd={onAdd} />
     </>
