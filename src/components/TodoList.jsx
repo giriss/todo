@@ -2,11 +2,11 @@ import React from 'react';
 import Todo from './Todo';
 import PropTypes from 'prop-types';
 
-function TodoList({ todos, onItemClick }) {
+function TodoList({ todos, onToggle }) {
   return (
     <ul>
       {todos.map(todo =>
-        <Todo {...todo} key={todo.title} onClick={() => onItemClick(todo)} />
+        <Todo {...todo} key={todo.title} onClick={() => onToggle(todo.title)} />
       )}
     </ul>
   );
@@ -17,7 +17,7 @@ TodoList.propTypes = {
     title: PropTypes.string.isRequired,
     completed: PropTypes.bool
   })),
-  onItemClick: PropTypes.func
+  onToggle: PropTypes.func
 }
 
 export default TodoList;
