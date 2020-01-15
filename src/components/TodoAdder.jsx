@@ -6,7 +6,7 @@ function TodoAdder({ onAdd }) {
 
   return (
     <form
-      onSubmit={event => {
+      onSubmit={(event) => {
         event.stopPropagation();
         event.preventDefault();
         onAdd(input.current.value);
@@ -14,13 +14,17 @@ function TodoAdder({ onAdd }) {
       }}
     >
       <input ref={input} placeholder="New todo" />
-      <button>Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
 
 TodoAdder.propTypes = {
-  onAdd: PropTypes.func
-}
+  onAdd: PropTypes.func,
+};
+
+TodoAdder.defaultProps = {
+  onAdd() {},
+};
 
 export default TodoAdder;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import TodoList from './TodoList';
 import TodoAdder from './TodoAdder';
 
@@ -16,15 +16,15 @@ function Todos({ items, onAdd, onToggle }) {
 Todos.propTypes = {
   items: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string.isRequired,
-    completed: PropTypes.bool
+    completed: PropTypes.bool,
   })).isRequired,
   onAdd: PropTypes.func,
-  onToggle: PropTypes.func
-}
+  onToggle: PropTypes.func,
+};
 
 Todos.defaultProps = {
-  onToggle: function() {},
-  onAdd: function() {}
-}
+  onToggle() {},
+  onAdd() {},
+};
 
 export default Todos;

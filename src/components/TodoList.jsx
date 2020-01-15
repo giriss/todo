@@ -1,13 +1,14 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import Todo from './Todo';
 import PropTypes from 'prop-types';
+import Todo from './Todo';
 
 function TodoList({ todos, onToggle }) {
   return (
     <ul>
-      {todos.map(todo =>
+      {todos.map((todo) => (
         <Todo {...todo} key={todo.title} onClick={() => onToggle(todo.title)} />
-      )}
+      ))}
     </ul>
   );
 }
@@ -15,13 +16,13 @@ function TodoList({ todos, onToggle }) {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string.isRequired,
-    completed: PropTypes.bool
+    completed: PropTypes.bool,
   })).isRequired,
-  onToggle: PropTypes.func
-}
+  onToggle: PropTypes.func,
+};
 
 TodoList.defaultProps = {
-  onToggle: function() {}
-}
+  onToggle() {},
+};
 
 export default TodoList;
