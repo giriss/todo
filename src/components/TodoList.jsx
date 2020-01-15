@@ -16,8 +16,12 @@ TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string.isRequired,
     completed: PropTypes.bool
-  })),
+  })).isRequired,
   onToggle: PropTypes.func
+}
+
+TodoList.defaultProps = {
+  onToggle: function() {}
 }
 
 export default TodoList;

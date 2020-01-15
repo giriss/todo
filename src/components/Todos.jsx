@@ -23,8 +23,8 @@ Todos.propTypes = {
 }
 
 Todos.defaultProps = {
-  onToggle: () => {},
-  onAdd: () => {}
+  onToggle: function() {},
+  onAdd: function() {}
 }
 
 export default Todos;
