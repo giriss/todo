@@ -31,9 +31,6 @@ Todo.propTypes = {
 
 Todo.defaultProps = {
   onClick() {},
-};
-
-Todo.defaultProps = {
   completed: false,
 };
 
