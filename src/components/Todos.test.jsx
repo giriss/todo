@@ -4,6 +4,5 @@ import Todos from './Todos';
 
 test('renders todos', () => {
   const { getByText } = render(<Todos items={[]} />);
-  const linkElement = getByText(/0 Todo/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(getByText(/0 Todo/i)).toBeInTheDocument();
 });
